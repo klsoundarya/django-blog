@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-w$j!0zl*jf6so+5!3afn(3$lh#icb9#a-91wpq6u8-0#zj-0)o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.herokuapp.com','localhost','127.0.0.1']
 
@@ -88,6 +88,11 @@ DATABASE_URL = os.getenv('DATABASE_URL')
 DATABASES = {
     'default': dj_database_url.config()
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.herokuapp.com"
+]
+
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # Password validation
